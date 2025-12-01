@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, <meta name="viewport" content="width=device-width,
+initial-scale=1.0">
+    <title>Белов Егор | Младший системный администратор</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@30;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100
+100'%3E%3Cpath fill='%2300f3ff' d='M50,10 L60,40 L50,50 L40,40 Z'/%3E%3C/svg%3E" type="image/svg+xml">
+    <style>
+        /* CSS Reset и базовые стили */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #0d1b2a, #1c2541);
+            color: #ffffff;
+            min-height: 100vh;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Анимации */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Секция Hero */
+        .hero {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #00f3ff, #8a2be2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .hero h2 {
+            font-size: 1.5rem;
+            font-weight: 400;
+            color: #8a2be2;
+            margin-bottom: 30px;
+            animation: fadeIn 1.2s ease-out;
+        }
+
+        /* Секция Skills */
+        .skills {
+            padding: 100px 0;
+            position: relative;
+        }
+
+        .skills h3 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: #00f3ff;
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 30px;
+        }
+
+        .skill-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 243, 255, 0.1);
+        }
+
+        .skill-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            color: #00f3ff;
+        }
+
+        .skill-name {
+            font-size: 1rem;
+            text-align: center;
+        }
+
+        /* Секция Portfolio */
+        .portfolio {
+            padding: 100px 0;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .portfolio h3 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: #00f3ff;
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .project-card {
+            background-color: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .project-image {
+            height: 200px;
+            background-color: #0a192f;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: #00f3ff;
+        }
+
+        .project-info {
+            padding: 20px;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #00f3ff;
+        }
+
+        .project-description {
+            font-size: 1rem;
+            color: #e0e0e0;
+        }
+
+        /* Секция Contact */
+        .contact {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .contact h3 {
+            text-align: center;
+            margin-bottom: 60px;
+            font-size: 2.5rem;
+            color: #00f3ff;
+        }
+
+        .contact-form {
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(0, 243, 255, 0.3);
+            border-radius: 5px;
+            color: white;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .form-control:focus {
+            outline: none;
+            border-color: #00f3ff;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: linear-gradient(90deg, #00f3ff, #8a2be2);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-family: 'Inter', sans-serif;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 243, 255, 0.3);
+        }
+
+        .social-links {
+            margin-top: 40px;
+        }
+
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.05);
+            color: #00f3ff;
+            margin: 0 10px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px);
+            background-color: #00f3ff;
+            color: #0d1b2a;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .github-link {
+            color: #00f3ff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .github-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero h2 {
+                font-size: 1.2rem;
+            }
+
+            .skills-grid {
+                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            }
+
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-form {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Секция Hero -->
+    <section class="hero" id="home">
+        <div class="container">
+            <h1>Белов Егор</h1>
+            <h2>Младший системный администратор</h2>
+        </div>
+    </section>
+
+    <!-- Секция Skills -->
+    <section class="skills" id="skills">
+        <div class="container">
+            <h3>Навыки</h3>
+            <div class="skills-grid">
+                <div class="skill-item">
+                    <i class="fab fa-cuttlefish skill-icon"></i>
+                    <div class="skill-name">С++</div>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-python skill-icon"></i>
+                    <div class="skill-name">Python</div>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-docker skill-icon"></i>
+                    <div class="skill-name">Docker</div>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-linux skill-icon"></i>
+                    <div class="skill-name">Linux</div>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-windows skill-icon"></i>
+                    <div class="skill-name">Windows</div>
+                </div>
+                <div class="skill-item">
+                    <i class="fab fa-terminal skill-icon"></i>
+                    <div class="skill-name">Git</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Portfolio -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h3>Проекты</h3>
+            <div class="portfolio-grid">
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <div class="project-info">
+                        <h4 class="project-title">Системное администрирование</h4>
+                        <p class="project-description">Управление серверами, настройка сети и обеспечение
+безопасности систем.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-database"></i>
+                    </div>
+                    <div class="project-info">
+                        <h4 class="project-title">Управление базами данных</h4>
+                        <p class="project-description">Настройка и администрирование PostgreSQL и MongoDB.</p>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-image">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <div class="project-info">
+                        <h4 class="project-title">Безопасность</h4>
+                        <p class="project-description">Разработка политик безопасности и проведение аудитов
+систем.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Секция Contact -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h3>Свяжитесь со мной</h3>
+            <form class="contact-form">
+                <div class="form-group">
+                    <label for="name">Имя</label>
+                    <input type="text" id="name" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" id="email" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="message">Сообщение</label>
+                    <textarea id="message" class="form-control" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn">Отправить</button>
+            </form>
+            <div class="social-links">
+                <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>Создан с использованием HTML, CSS и JavaScript</p>
+            <a href="#" class="github-link">github.com/username</a>
+        </div>
+    </footer>
+
+    <script>
+        // Простая валидация формы
+        document.querySelector('.contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (name && email && message) {
+                alert('Спасибо за ваше сообщение! Я свяжусь с вами в ближайшее время.');
+                this.reset();
+            } else {
+                alert('Пожалуйста, заполните все поля.');
+            }
+        });
+
+        // Плавный скролл при навигации
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+
+                window.scrollTo({
+                    top: targetElement.offsetTop,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
